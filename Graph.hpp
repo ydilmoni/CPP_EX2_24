@@ -21,34 +21,44 @@ namespace ariel {
 
     public:
         Graph();  // Constructor declaration
+        Graph(const Graph& other); // copy constructor : task 2
+        Graph(int num_of_vertex); // empty constructor - for operators: task 2
         ~Graph(); // Destructor declaration
         
-       
-        
-
-        
         void loadGraph(const vector<vector<int> >& matrix);
+ 
         void printGraph() const;
+ 
         size_t getNumOfvertices() const { 
             return num_of_vertices; 
         }
+ 
         size_t getNumOfEdges() const {
              return num_of_edges; 
         }
+ 
         const vector<vector<int> >& getMatrixGraph() const { 
             return matrix_graph; 
         }
+ 
         bool getIsDirected() const { 
             return isDirected; 
         } 
+ 
         bool getIsWeighted() const { 
             return isWeighted; 
         } 
+ 
         bool getHaveNegative() const { 
             return haveNegative; 
         } 
 
         static bool validateSquareMatrix(const vector<vector<int> >& matrix);
+
+        Graph operator+(const Graph& other) const;
+        Graph operator-(const Graph& other) const;
+
+        void print_matrix();
     };
 }
 
