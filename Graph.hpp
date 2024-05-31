@@ -55,8 +55,17 @@ namespace ariel {
 
         static bool validateSquareMatrix(const vector<vector<int> >& matrix);
 
+        vector<vector<int>> matrix_multification(vector<vector<int>> matrixA,vector<vector<int>> matrixB);
         Graph operator+(const Graph& other) const;
-        Graph operator-(const Graph& other) const;
+        Graph& operator++(); //prefix ++
+        Graph operator++(int);
+        // Graph operator-(const Graph& other) const;
+        // Graph operator--(int);
+        // Graph operator--();
+        // Graph operator*(const Graph& other) const;
+        // Graph& Graph::operator+=(const Graph& other);
+        // Graph& Graph::operator-=(const Graph& other);
+        // Graph& Graph::operator*=(const Graph& other);
 
         void print_matrix();
     };
